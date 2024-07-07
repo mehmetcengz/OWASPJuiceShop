@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="OWASPJuice Tests">
+        <groups>
+            <dependencies>
+                <group name="functional" depends-on="smoke"/>
+            </dependencies>
+        </groups>
+        <classes>
+            <class name="tests.CheckoutTest"/>
+            <class name="tests.RegistrationTest"/>
+            <class name="tests.LoginTest"/>
+            <class name="tests.ShoppingCartTest"/>
+        </classes>
+    </test>
+</suite>
