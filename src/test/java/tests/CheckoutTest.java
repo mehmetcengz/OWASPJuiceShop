@@ -2,12 +2,14 @@ package tests;
 
 import data.UserData;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.AddressPage;
 import pages.OrderSummeryPage;
 import pages.PaymentOptionsPage;
 import pages.ShoppingCartPage;
+import utilities.Driver;
 
 public class CheckoutTest {
     private final AddressPage addressPage = new AddressPage();
@@ -54,6 +56,11 @@ public class CheckoutTest {
                 ,"Your order has been placed and is being processed. You can check for status updates on our Track Orders page.");
         Thread.sleep(2000);
         Assert.assertTrue(shoppingCartPage.itemsCount.getText().contains("0"));
+    }
+
+    @AfterClass
+    public void tearDown(){
+        Driver.quitDriver();
     }
 
 }
